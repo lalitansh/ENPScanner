@@ -6,12 +6,16 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import {createStackNavigator} from '@react-navigation/stack'
 import Login from '../screens/Login';
-import Profile from '../screens/ItemList'
+import Profile from '../screens/ItemList';
+import Home from '../screens/Home';
+import Scanner from '../screens/CameraScanner'
 
 
 
 const Tab = createMaterialTopTabNavigator();
+const Stack = createStackNavigator();
 
 const AppStack = () => {
   return (
@@ -47,4 +51,63 @@ const AppStack = () => {
   );
 }
 
-export default AppStack;
+
+const StackNaV=()=> {
+return(
+  <Stack.Navigator>
+  <Stack.Screen
+      name="Home"
+      component={Home}
+      options={{
+        headerTitleAlign: 'center',
+        headerTitleStyle: {
+          color: '#2e64e5',
+          //fontFamily: 'Kufam-SemiBoldItalic',
+          fontSize:18
+        },
+        headerStyle: {
+          shadowColor: '#fff',
+          elevation: 0,
+        },
+       
+      }}
+    />
+    <Stack.Screen
+      name="Items"
+      component={AppStack}
+      options={{
+        headerTitleAlign: 'center',
+        headerTitleStyle: {
+          color: '#2e64e5',
+          //fontFamily: 'Kufam-SemiBoldItalic',
+          fontSize:18
+        },
+        headerStyle: {
+          shadowColor: '#fff',
+          elevation: 0,
+        },
+       
+      }}
+    />
+    <Stack.Screen
+      name="Scanner"
+      component={Scanner}
+      options={{
+        headerTitleAlign: 'center',
+        headerTitleStyle: {
+          color: '#2e64e5',
+          //fontFamily: 'Kufam-SemiBoldItalic',
+          fontSize:18
+        },
+        headerStyle: {
+          shadowColor: '#fff',
+          elevation: 0,
+        },
+       
+      }}
+    />
+    </Stack.Navigator>
+)
+}
+
+export default StackNaV;
