@@ -1,11 +1,17 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native'
-import AppStack from './AppStack';
+import StackNaV from './AppStack';
+import SplashScreen from 'react-native-splash-screen';
 
  const AppNav=()=> {
+
+   useEffect(()=>{
+      SplashScreen.hide()
+    },[])
+
    return(
 <NavigationContainer>
-<AppStack/>
+<StackNaV/>
 </NavigationContainer>
    )
 

@@ -7,10 +7,11 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import {createStackNavigator} from '@react-navigation/stack'
-import Login from '../screens/Login';
+import ItemList from '../screens/Login';
 import Profile from '../screens/ItemList';
 import Home from '../screens/Home';
 import Scanner from '../screens/CameraScanner'
+import ScannedItems from '../screens/ScannedItems'
 
 
 
@@ -25,7 +26,7 @@ const AppStack = () => {
       }}>
       <Tab.Screen
         name="Home"
-        component={Login}
+        component={ItemList}
         options={{
           tabBarLabel: 'Items',
           tabBarIcon: ({color, size}) => (
@@ -58,6 +59,7 @@ return(
   <Stack.Screen
       name="Home"
       component={Home}
+      initialRouteName = "Home"
       options={{
         headerTitleAlign: 'center',
         headerTitleStyle: {
@@ -74,7 +76,7 @@ return(
     />
     <Stack.Screen
       name="Items"
-      component={AppStack}
+      component={ItemList}
       options={{
         headerTitleAlign: 'center',
         headerTitleStyle: {
@@ -103,9 +105,28 @@ return(
           shadowColor: '#fff',
           elevation: 0,
         },
-       
+      
       }}
     />
+    <Stack.Screen
+      name="ScannedItems"
+      component={ScannedItems}
+      options={{
+        headerTitleAlign: 'center',
+        headerTitleStyle: {
+          color: '#2e64e5',
+          //fontFamily: 'Kufam-SemiBoldItalic',
+          fontSize:18
+        },
+        headerStyle: {
+          shadowColor: '#fff',
+          elevation: 0,
+        },
+      
+      }}
+    />
+
+
     </Stack.Navigator>
 )
 }

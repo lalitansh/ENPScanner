@@ -16,7 +16,12 @@ Card
 const WIDTH = Dimensions.get('window').width
 const HEIGHT = Dimensions.get('window').height
 
-const Login=()=> {
+
+
+const Items=({navigation})=> {
+
+
+
 const [networkData , setNetworkData] = useState([])
 const [loading, setLoading] = useState(true)
 const [visible, setVisible] = useState(false)
@@ -109,7 +114,7 @@ function getMoviesFromApiAsync() {
 
 
   
-  export default Login;
+  export default Items;
   
   const styles = StyleSheet.create({
     Container : {
@@ -126,7 +131,7 @@ function getMoviesFromApiAsync() {
       width: '98%',
       marginTop: '1.7%',
       margin : 3,
-      aspectRatio : 2.5/1,
+      aspectRatio : 2.2/1,
       ...Platform.select({
         default : {
           shadowColor: '#6b6162',
